@@ -1,6 +1,3 @@
-
-
-
 def main():
 
     board = [
@@ -15,8 +12,13 @@ def main():
     [2,4,3,5,1,8,9,7,6]
     ]
 
-    print(check_board(board))
-
+    result=(check_board(board))
+    if result == True:
+        print("Valid Board")
+    else:
+        print("Invalid Board, try again.")
+    #print(check_board(board))
+    #print(board)
     
 
 def check_board(board):
@@ -55,7 +57,6 @@ def check_board(board):
         column.append(board[6][i]) 
         column.append(board[7][i]) 
         column.append(board[8][i])  
-        print(column)
         if 1 not in column:
             return False
         elif 2 not in column:
@@ -88,7 +89,6 @@ def check_board(board):
             group.append(board[x*3+2][y*3])
             group.append(board[x*3+2][y*3+1])
             group.append(board[x*3+2][y*3+2])
-            print(group)
             if 1 not in group:
                 return False
             elif 2 not in group:
@@ -109,12 +109,6 @@ def check_board(board):
                 return False    
 
     return True
-
-
-
-
-    
-              
 
 if __name__=="__main__":
     main()    
